@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-app.get('/:name?', async (req, res) => {
+app.get('/api/:name?', async (req, res) => {
 	const personName = req.params.name;
 	res.status(200).json({
 		hello: personName ?? 'world',
@@ -13,5 +13,5 @@ app.get('/:name?', async (req, res) => {
 });
 
 const PORT = process.env.PORT ?? 8080;
-app.listen(PORT, () => console.log(`Listening to port ${PORT}`);
+app.listen(PORT, () => console.log(`Listening to port ${PORT}`));
 
